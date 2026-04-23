@@ -3,12 +3,11 @@
   gather_facts: no
   connection: local
   vars:
-    # Replace with your desired AMI ID
-     ami_id: ami-0220d79f3f480ecf5
-     sg_id: sg-0db110084486818ff
-     zone_id: "Z05660673G75FK1II7TFX"
-     domain_name: "devopsplayground.fun"
-     instance:
+    ami_id: ami-0220d79f3f480ecf5
+    sg_id: sg-0db110084486818ff
+    zone_id: "Z05660673G75FK1II7TFX"
+    domain_name: "devopsplayground.fun"
+    instance:
       - mongodb
 
   tasks:
@@ -20,9 +19,9 @@
         image_id: "{{ ami_id }}"
         tags:
           Name: "{{ item }}"
-        loop: "{{ instance }}" 
-        register: ec2_output
+      loop: "{{ instance }}"
+      register: ec2_output
 
-        -name : Print EC2 instance details
-        ansible.builtin.debug:
-          msg: "{{ ec2_output }}"
+    - name: Print EC2 instance details
+      ansible.builtin.debug:
+        msg: "{{ ec2_output }}"
