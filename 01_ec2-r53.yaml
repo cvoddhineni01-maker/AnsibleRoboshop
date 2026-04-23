@@ -28,10 +28,10 @@
 
     - name: Create public_ip
       ansible.builtin.debug: 
-      msg: "{{ item.instances[0].public_ip_address }}"
+        msg: "{{ item.instances[0].public_ip_address }}"
       loop: "{{ ec2_output.results }}"
 
     - name: Create private_ip
       ansible.builtin.debug: 
-      msg: "{{ item.instances[0].private_ip_address }}"
+        msg: "{{ item.instances[0].private_ip_address }}"
       loop: "{{ ec2_output.results }}"
