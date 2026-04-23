@@ -22,16 +22,27 @@
       loop: "{{ instance }}"
       register: ec2_output
 
-    - name: Print EC2 instance details
-      ansible.builtin.debug:
-        msg: "{{ ec2_output }}"
+    # - name: Print EC2 instance details
+    #   ansible.builtin.debug:
+    #     msg: "{{ ec2_output }}"
 
-    - name: Create public_ip
-      ansible.builtin.debug: 
-        msg: "{{ item.instances[0].public_ip_address }}"
-      loop: "{{ ec2_output.results }}"
+    # - name: Create public_ip
+    #   ansible.builtin.debug: 
+    #     msg: "{{ item.instances[0].public_ip_address }}"
+    #   loop: "{{ ec2_output.results }}"
 
-    - name: Create private_ip
-      ansible.builtin.debug: 
-        msg: "{{ item.instances[0].private_ip_address }}"
+    # - name: Create private_ip
+    #   ansible.builtin.debug: 
+    #     msg: "{{ item.instances[0].private_ip_address }}"
+    #   loop: "{{ ec2_output.results }}"
+
+    - name: Create R53 record
+      amazon.aws.route53:
+        state: present
+        zone: "{{ zone_id }}"
+        record: "{{ item.item }}.{{ domain_name }}" #mongodb.devopsplayground.fun
+        type: A
+        ttl: 1
+        value: "{{ item.instances[0].private_ip_address }}"
+        overwrite: true
       loop: "{{ ec2_output.results }}"
