@@ -24,7 +24,7 @@
 
     - name: allow remote connection 
           ansible.builtin.replace:
-          dest: /etc/mongod.conf
+          path: /etc/mongod.conf
           regexp: 'bindIp: 127.0.0.1'
           replace: 'bindIp: 0.0.0.0'
 
