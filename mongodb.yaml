@@ -23,7 +23,7 @@
           msg: "MongoDB installation and service setup completed successfully."
 
     - name: allow remote connection 
-          ansible.builtin.replace:
+      ansible.builtin.replace:
           path: /etc/mongod.conf
           regexp: 'bindIp: 127.0.0.1'
           replace: 'bindIp: 0.0.0.0'
