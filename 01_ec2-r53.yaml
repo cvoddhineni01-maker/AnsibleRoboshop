@@ -9,6 +9,8 @@
     domain_name: "devopsplayground.fun"
     instance:
       - mongodb
+      - redis
+      - mysql
 
   tasks:
     - name: Create EC2 instance
