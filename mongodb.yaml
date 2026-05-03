@@ -19,8 +19,6 @@
         state: started
         enabled: yes
 
-      ansible.builtin.debug:
-          msg: "MongoDB installation and service setup completed successfully."
 
     - name: allow remote connection 
       ansible.builtin.replace:
