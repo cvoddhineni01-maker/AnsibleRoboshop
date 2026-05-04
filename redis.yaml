@@ -16,7 +16,7 @@
 
     - name: Allow remote connection
       ansible.builtin.replace:
-        path: /etc/redis/redis.conf   ✅ correct path
+        path: /etc/redis/redis.conf
         regexp: "127.0.0.1"
         replace: "0.0.0.0"
 
@@ -25,8 +25,6 @@
         path: /etc/redis/redis.conf
         regexp: "protected-mode"
         line: "protected-mode no"
-
-    
 
     - name: Start and enable Redis service
       ansible.builtin.service:
