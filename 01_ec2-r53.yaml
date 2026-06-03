@@ -6,7 +6,7 @@
     ami_id: ami-0220d79f3f480ecf5
     sg_id: sg-0db110084486818ff
     zone_id: "Z05660673G75FK1II7TFX"
-    domain_name: "devopsplaygroundh.fun"
+    domain_name: "devopsplayground.fun"
     instance:
       - mongodb
       - redis
