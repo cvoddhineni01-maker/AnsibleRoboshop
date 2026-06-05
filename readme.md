@@ -85,4 +85,10 @@ If you need to customize the deployment, edit the corresponding playbook and inv
 
 ---
 
-![Roboshop Architecture](roboshop.jpg)
+![alt text](image.png)
+
+#Last Session Stop 
+
+Session 25
+Time Stamp:56.10 
+
