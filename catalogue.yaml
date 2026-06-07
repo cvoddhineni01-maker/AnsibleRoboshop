@@ -1,4 +1,4 @@
-- name: Catalogue Setup Server
+- name: Catalogue Setup Server  #File name5 : catalogue.yaml
   hosts: catalogue
   become: yes
 
@@ -37,3 +37,30 @@
         src: /tmp/catalogue.zip
         dest: /app
         remote_src: yes
+
+    - name: Install npm dependencies
+      Community.general.npm:
+        path: /app
+
+    - name: copy catalogue service file
+      ansible.builtin.copy:
+        src: catalogue.service
+        dest: /etc/systemd/system/catalogue.service
+
+    - name: copy mongodb repo file
+      ansible.builtin.copy:
+        src: mongo.repo
+        dest: /etc/yum.repos.d/mongodb.repo
+
+    - name: Install MongoDB client
+      ansible.builtin.package:
+        name: mongodb-mongosh
+        state: present
+
+    - name: Connect to mongodb catalogue
+      ansible.builtin.command: mongosh mongodb.devopsplayground.fun --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')"
+      register: catalogue_output
+
+    - name: print catalogue output
+      ansible.builtin.debug:
+        msg: "{{ catalogue_output }}"
