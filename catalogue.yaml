@@ -61,7 +61,7 @@
       ansible.builtin.command: mongosh mongodb.devopsplayground.fun --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')"
       register: catalogue_output
 
-    # - name: eval catalogue database
+    # - name: eval catalogue database.
     #   community.mongodb.mongodb_shell:
     #     login_host: mongodb.devopsplayground.fun
     #     eval: "db.getMongo().getDBNames().indexOf('catalogue')"
