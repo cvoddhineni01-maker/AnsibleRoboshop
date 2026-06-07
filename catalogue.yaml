@@ -39,7 +39,7 @@
         remote_src: yes
 
     - name: Install npm dependencies
-      Community.general.npm:
+      community.general.npm:
         path: /app
 
     - name: copy catalogue service file
