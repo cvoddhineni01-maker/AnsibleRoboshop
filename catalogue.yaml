@@ -76,3 +76,8 @@
     #     login_host: mongodb.devopsplayground.fun
     #     eval: "db.getMongo().getDBNames().indexOf('catalogue')"
     #   register: catalogue_output
+
+
+    - name: load products into mongodb
+      ansible.builtin.command: mongosh --host mongodb.devopsplayground.fun </app/db/master-data.js
+      when: catalogue_output.stdout < 0 || int < 0
