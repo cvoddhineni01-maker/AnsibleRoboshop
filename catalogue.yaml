@@ -67,9 +67,9 @@
     #     eval: "db.getMongo().getDBNames().indexOf('catalogue')"
     #   register: catalogue_output
 
-    # - name: print catalogue output
-    #   ansible.builtin.debug:
-    #     msg: "{{ catalogue_output }}"
+    - name: print catalogue output
+      ansible.builtin.debug:
+        msg: "{{ catalogue_output }}"
 
     # - name: load products into mongodb
     #   ansible.builtin.command: mongosh --host mongodb.devopsplayground.fun --eval "db.getSiblingDB('catalogue').products.insertMany($(cat /app/schema/products.json))" 
