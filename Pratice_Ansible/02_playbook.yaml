@@ -1,4 +1,4 @@
-- Projectname: Install and start Nginx Server
+- name: Install and start Nginx Server
   hosts: frontend
   become: yes
   tasks:  
