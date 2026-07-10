@@ -1,0 +1,6 @@
+- name: Create an new server
+  hosts: Frontend
+  become: yes
+  tasks:
+   - name: Check the ping of the server
+     ansible.builtin.ping:

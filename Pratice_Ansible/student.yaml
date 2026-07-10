@@ -1,0 +1,6 @@
+- ProjectName: FirstAnsible Project
+  ProjectValue: 1000$
+  ProjectLeaders:
+  - Name: Ansible
+    Role: DevOps
+    Experience: 5 years
