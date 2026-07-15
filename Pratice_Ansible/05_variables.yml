@@ -1,0 +1,11 @@
+- name: Practing the variables
+  hosts: Frontend
+  become: true
+  vars:
+   Course: Ansible
+   Duration: 12 hrs 
+   Trainer: Shiva 
+  tasks: 
+   - name: Checking Variables 
+     ansible.builtin.debug:
+     msg: "Course name is: {{ Course }}, Duration is :   {{Duration}}, Trainer is :  {{Trainer}}"
