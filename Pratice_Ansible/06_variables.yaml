@@ -1,0 +1,9 @@
+- name: Printing varaibles from other folder
+  hosts: Frontend
+  become: true
+  vars_files: 
+    - course.yaml
+  tasks: 
+    - name: Printing varaibles
+      ansible.builtin.debug:
+        msg: "Print the : {{Course}} "
