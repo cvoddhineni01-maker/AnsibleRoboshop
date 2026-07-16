@@ -1,0 +1,11 @@
+- name: Validating varaible prompt
+  hosts: Frontend
+  vars_prompt:
+    - name: username
+      prompt: What is your username?
+      private: false
+
+  tasks:
+    - name : Print Details
+      ansible.builtin.debug:
+      msg: "Hello!, Username is {{username}}"
