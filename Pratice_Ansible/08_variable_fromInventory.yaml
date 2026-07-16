@@ -1,0 +1,7 @@
+- name: Printing varaibles from other inventory
+  hosts: Frontend
+  become: true
+  tasks: 
+    - name: Printing varaibles
+      ansible.builtin.debug:
+        msg: "Print the : {{Course}} "
