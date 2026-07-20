@@ -1,0 +1,6 @@
+- name: Getting to know more about gather facts 
+  hosts: Frontend
+  tasks: 
+   - name: Getting to know more about this 
+     ansible.builtin.debug:
+      msg: "{{ ansible_facts }}"
