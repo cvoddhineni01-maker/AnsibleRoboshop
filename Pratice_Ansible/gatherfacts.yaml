@@ -8,3 +8,7 @@
     - name: Store OS information
       ansible.builtin.set_fact:
         os_value: "{{ ansible_os_family }}"
+
+    - name: Print stored OS value
+      ansible.builtin.debug:
+        msg: "OS family is {{ os_value }}"
