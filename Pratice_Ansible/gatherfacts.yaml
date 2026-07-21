@@ -1,9 +1,10 @@
-- name: Getting to know more about gather facts 
+- name: Getting to know more about gather facts
   hosts: Frontend
-  tasks: 
-   - name: Getting to know more about this 
-     ansible.builtin.debug:
-      msg: "{{ ansible_facts }}"
+
+  tasks:
+    - name: Getting to know more about this
+      ansible.builtin.debug:
+        msg: "{{ ansible_facts }}"
 
     - name: Store OS information
       ansible.builtin.set_fact:
