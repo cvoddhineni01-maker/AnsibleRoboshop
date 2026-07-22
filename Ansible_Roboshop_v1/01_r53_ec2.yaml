@@ -28,4 +28,4 @@
     - name: Print the Ec2 Public IP addresss
       ansible.builtin.debug:
        msg: "{{item.instances[0].public_ip_address}}"
-      loop: "{{ ec2_instance.results }}"
+      loop: "{{ ec2_output.results }}"
