@@ -1,6 +1,6 @@
 - name: Creating route 53 and ec2 instances
-  hosts: local
-  connection: localhost
+  hosts: localhost
+  connection: local
   vars: 
    ami_id: ami-0220d79f3f480ecf5
    sg_id: sg-0db110084486818ff
