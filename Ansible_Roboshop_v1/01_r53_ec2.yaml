@@ -21,11 +21,20 @@
       loop:  "{{instances}}"
       register: ec2_output
 
-    - name: Print the ec2 ec2_output
-      ansible.builtin.debug:
-        msg: "{{ ec2_output }}"
+    #- name: Print the ec2 ec2_output
+    #  ansible.builtin.debug:
+    #    msg: "{{ ec2_output }}"
 
-    - name: Print the Ec2 Public IP addresss
-      ansible.builtin.debug:
-       msg: "{{item.instances[0].public_ip_address}}"
+    #- name: Print the Ec2 Public IP addresss
+    #  ansible.builtin.debug:
+    #   msg: "{{item.instances[0].public_ip_address}}"
+    #  loop: "{{ ec2_output.results }}"
+    - name: Create Route 53 
+      amazon.aws.route53:
+       state: present
+       zone: "{{ domain_name }}"
+       record: "{{item.item}}.{{domain_name}}" 
+       type: A
+       ttl: 1
+       value: "{{item.instances[0].private_ip_address}}"
       loop: "{{ ec2_output.results }}"
