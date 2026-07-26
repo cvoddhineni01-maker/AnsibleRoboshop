@@ -7,7 +7,8 @@
    zone_id: "Z05660673G75FK1II7TFX"
    domain_name: "devopsplayground.fun"
    instances:
-    - MongoDB
+    - mongoDB
+    - redis
 
   tasks:
     - name: Create EC2 instances
