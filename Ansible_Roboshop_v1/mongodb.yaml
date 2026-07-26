@@ -1,0 +1,8 @@
+- name: Installing mongoDB Server
+  hosts: mongodb
+  become: yes
+  tasks: 
+    - name: copy ansible module
+      ansible.builtin.copy:
+        src: mongo.repo
+        dest: /etc/yum.repos.d/mongo.repo
