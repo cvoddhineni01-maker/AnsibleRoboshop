@@ -17,7 +17,7 @@
       ansible.builtin.service:
        name: rabbitmq-server
        state: started
-       enable: true 
+       enabled: true 
 
     - name: Create and provide user access 
       community.rabbitmq.rabbitmq_user:
