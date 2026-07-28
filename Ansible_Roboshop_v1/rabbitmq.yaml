@@ -5,13 +5,13 @@
     - name: Setting up Rabbitmq repo
       ansible.builtin.copy:
        src: rabbitmq.repo
-       dest: vim /etc/yum.repos.d/rabbitmq.repo
+       dest: /etc/yum.repos.d/rabbitmq.repo
 
     - name: Install Rabbitmq server
       ansible.builtin.package:
        name: rabbitmq-server
        state: present
-       
+
 
     - name: Start and enable Rabbitmq server
       ansible.builtin.service:
