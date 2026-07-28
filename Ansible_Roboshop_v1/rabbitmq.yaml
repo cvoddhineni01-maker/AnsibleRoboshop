@@ -11,6 +11,7 @@
       ansible.builtin.package:
        name: rabbitmq-server
        state: present
+       
 
     - name: Start and enable Rabbitmq server
       ansible.builtin.service:
