@@ -11,6 +11,7 @@
     - redis
     - mysql
     - rabbitmq
+    - catalogue
 
   tasks:
     - name: Create EC2 instances
