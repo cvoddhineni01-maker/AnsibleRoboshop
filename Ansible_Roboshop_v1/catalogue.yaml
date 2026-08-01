@@ -27,7 +27,7 @@
        state: absent
 
     - name: Download catalogue application
-      ansible.builtin.get.url:
+      ansible.builtin.get_url:
         url: https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip 
         dest: /tmp/catalogue.zip
 
