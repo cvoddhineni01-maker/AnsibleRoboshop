@@ -1,0 +1,10 @@
+- name: Conditions example
+  hosts: Frontend
+  become: true
+  vars:
+    a: 8
+  tasks:
+    - name: Which number is greater 
+      ansible.builtin.debug:
+        msg: "check the {{ a }}number is less than 10"
+      when: ( a<10)

@@ -1,1 +1,14 @@
 #test
+- name : "Sachin book"
+  dob : 21st october 
+  age : 29
+  email : sachin@example.com
+  addresss:
+  - city: pune
+    state: maharashtra
+    pincode: 411003
+  - city: pune
+    state: maharashtra
+    pincode: 411001
+  
+

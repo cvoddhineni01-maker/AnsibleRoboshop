@@ -1,4 +1,4 @@
-- name: Install MongoDB Server
+- name: Install MongoDB Server #File name1 : mongodb.yaml
   hosts: mongodb
   become: yes
 

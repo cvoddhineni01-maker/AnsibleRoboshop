@@ -1,0 +1,7 @@
+- name: Learn the devops course
+  hosts: Frontend
+  tasks: 
+   - name: this is doll
+      baluu: this is babu
+   - name2: this bali
+

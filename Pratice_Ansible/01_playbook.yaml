@@ -4,3 +4,4 @@
   tasks:
    - name: Check the ping of the server
      ansible.builtin.ping:
+     

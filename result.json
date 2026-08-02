@@ -1,0 +1,22 @@
+{
+        "changed": true,
+        "cmd": [
+            "mongosh",
+            "mongodb.devopsplayground.fun",
+            "--quiet",
+            "--eval",
+            "db.getMongo().getDBNames().indexOf('catalogue')"
+        ],
+        "delta": "0:00:01.144664",
+        "end": "2026-06-07 04:22:41.197327",
+        "failed": false,
+        "msg": "",
+        "rc": 0,
+        "start": "2026-06-07 04:22:40.052663",
+        "stderr": "",
+        "stderr_lines": [],
+        "stdout": "-1",
+        "stdout_lines": [
+            "-1"
+        ]
+    }

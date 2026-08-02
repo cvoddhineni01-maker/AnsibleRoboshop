@@ -1,0 +1,19 @@
+- name: Functions and their uses
+  hosts: Frontend
+  vars:
+   sachin: "CRICKETER"
+  tasks: 
+    - name: Print the small letters
+      ansible.builtin.debug:
+        msg: "{{ sachin | lower }}"
+
+    - name: Convert from small to Captial
+      ansible.builtin.debug:
+        msg: "{{sachin | upper }}"
+
+    - name: Convert from small to Captial
+      ansible.builtin.debug:
+        msg: "{{sachin | length }}"
+
+        
+  

@@ -1,4 +1,4 @@
-- name: RabbitMQ Setup Server
+- name: RabbitMQ Setup Server #File name4 : rabbitmq.yaml
   hosts: rabbitmq
   become: yes
 

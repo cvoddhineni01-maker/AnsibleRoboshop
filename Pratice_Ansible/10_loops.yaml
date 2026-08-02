@@ -1,0 +1,12 @@
+- name: Printings the loops
+  hosts: Frontend
+  beocome: true
+  tasks: 
+    - name: Print the loop
+      ansible.builtin.package:
+         name: "{{item.name}}"
+         state: "{{item.state}}"
+
+      loop: 
+        - {name: "nginx", state: "present"}
+        - {name: "mysqld", state: "present"}

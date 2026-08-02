@@ -1,4 +1,4 @@
-- name: Setup Redis Server
+- name: Setup Redis Server #``File name2 : redis.yaml
   hosts: redis
   become: yes
 

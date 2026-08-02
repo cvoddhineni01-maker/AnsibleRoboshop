@@ -1,0 +1,14 @@
+- name: Checking on loops
+  hosts: Frontend
+  become: true
+  tasks:
+     - name: loop using lists
+       ansible.builtin.debug:
+        msg: "name is {{item.name}}"
+
+
+
+       loop:
+        - name: chandu
+        - age: 15
+        - country: usa
